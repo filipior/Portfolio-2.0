@@ -513,7 +513,6 @@ $xlViewport: 1200px;
 	}   
 }
 
-
 .projectInfo {
     display: block;
     width: 100%;     
@@ -639,4 +638,23 @@ $xlViewport: 1200px;
 .end {
 	align-self: flex-end;
 	// margin-top: auto;
+}
+
+/* STYLE DLA ZDJĘĆ */
+
+.photoTwoColums {
+	display: flex;
+
+	img {
+		width: 100%;
+		padding: 10px;
+	}
+}
+
+.photoTwoColumnsLeft {
+	width: 60%;
+}
+
+.photoTwoColumnsRight {
+	width: 40%
 }
