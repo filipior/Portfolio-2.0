@@ -19,15 +19,13 @@ $(function () {
 
 	});
 
-	// covery ----------------------------------------
+	// covery -----------------------------------------------
 
 	var cover = $(".cover");
 	var content = $(".projectContent");
 	var coverTitle = $(".content");
-
 	var logo = $(".logo");
 	var top = $(".top");
-	
 	var allClosed = true;
 
 	
@@ -40,8 +38,8 @@ $(function () {
 		$(this).removeClass("coverMin").addClass("coverMax");
 		content.removeClass("hidden").addClass("show")
 		
-		
 		allClosed = false;
+
 		if (allClosed === false) {
 			cover.removeClass("coverRollover");
 			cover.removeClass("coverRolloverOut");
@@ -57,8 +55,8 @@ $(function () {
 		content.removeClass("show").addClass("hidden");
 		content.css('display', 'none');
 		
-
 		allClosed = true;
+		
 		if (allClosed === true) {
 			cover.addClass("coverRollover");
 			logo.removeClass("logoCollapsed");
