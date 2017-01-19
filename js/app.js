@@ -5,7 +5,7 @@ $(function () {
 	var cover = $( ".cover" );
 
 	cover.on("mouseenter", function (event) {
-		$(this).addClass("coverOnHover" );
+		$(this).addClass("coverRolloverOut" );
 	});
 
     // menu hamburger ----------------------------------------
@@ -19,26 +19,50 @@ $(function () {
 
 	});
 
-// rozszerzanie coverów 
+	// covery ----------------------------------------
 
 	var cover = $(".cover");
-	var logo = $(".logo");
-	var content = $(".xyz");
+	var content = $(".contentHidden");
 	var coverTitle = $(".content");
 
+	var logo = $(".logo");
+	var top = $(".top");
+	
+	var allClosed = true;
+
+	
 	cover.on("click", function(event) {
+
 		cover.addClass("coverMin");
 		cover.removeClass("coverMax");
 		$(this).removeClass("coverMin").addClass("coverMax");
 		content.css("display", "block");
-		// coverTitle.css("display", "none");
+		
+		
+		allClosed = false;
+		if (allClosed === false) {
+			cover.removeClass("coverRollover");
+			cover.removeClass("coverRolloverOut");
+			logo.addClass("logoCollapsed");
+			top.addClass("topCollapsed");
+		} 
+
+
 	});
 
 	logo.on("click", function (event) {
+
 		cover.removeClass("coverMax");
 		cover.removeClass("coverMin");
-		// content.css("display", "none");
-		coverTitle.css("display", "block");
+		content.css("display", "none");
+		// coverTitle.css("display", "block");
+
+		allClosed = true;
+		if (allClosed === true) {
+			cover.addClass("coverRollover");
+			logo.removeClass("logoCollapsed");
+			top.removeClass("topCollapsed");
+		}
 
 	});
 

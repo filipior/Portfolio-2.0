@@ -14,7 +14,6 @@ body {
 
 $sViewport: 320px;
 $mViewport: 600px;
-$lViewport: 900px;
 $xlViewport: 1200px;
 
 .top {
@@ -24,19 +23,21 @@ $xlViewport: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // padding: 10px;
     transition: height 0.5s;
 
     @media (min-width: $sViewport) {
         height: 85px;
     }
 
-    @media (min-width: $lViewport) {
-        height: 120px;
-    }
 
     @media (min-width: $xlViewport) {
         height: 170px;
+    }
+}
+
+.topCollapsed {
+	@media (min-width: $xlViewport) {
+        height: 85px;
     }
 }
 
@@ -56,17 +57,19 @@ $xlViewport: 1200px;
         margin-left: 10px;
     }
 
-    @media (min-width: $lViewport) {
-        width: 75px;
-		height: 75px;
-        margin-left: 15px;
-    }
-
     @media (min-width: $xlViewport) {
         width: 95px;
         height: 95px;
         margin-left: 35px;
     }
+}
+
+.logoCollapsed {
+
+	@media (min-width: $xlViewport) {
+		width: 60px;
+		height: 60px;
+	}
 }
 
 .socialIcons {
@@ -150,6 +153,7 @@ $xlViewport: 1200px;
 
     @media (min-width: $sViewport) {
         width: 100%;
+		display: block;
     }
 
     @media (min-width: $xlViewport) {
@@ -178,12 +182,7 @@ $xlViewport: 1200px;
 	font-size: 18px;
 	color: #babbba;
 }
-
-.coverOnHover {
-	animation-name: onHoverOut;
-	animation-duration: 0.3s;
-}   
-
+ 
 .cover {
 	width: 100%;
 	height: 35vh;
@@ -196,6 +195,7 @@ $xlViewport: 1200px;
 	text-align: center;
 	margin-bottom: 1px;
 	transition: height 0.5s ease-in-out;
+	
 	cursor: pointer;
 
     @media (min-width: $xlViewport) {
@@ -211,7 +211,12 @@ $xlViewport: 1200px;
     }
 }
 
-.cover:hover {
+.coverRolloverOut {
+	animation-name: onHoverOut;
+	animation-duration: 0.3s;
+}  
+
+.coverRollover:hover {
 	animation-name: onHoverIn;
 	background-position: 100%;
 
@@ -252,39 +257,211 @@ $xlViewport: 1200px;
 .coverMax {
    	width: 100%;
     height: calc(100vh - 24vh - 85px);
-
+	background:  #9cb4c4;
+	position: relative;
+	display: block;
+	
     @media (min-width: $xlViewport) {
         width: 79%;
-        height: 100vh;
-		background-color:  #9cb4c4;
-        overflow: hidden;
+        height: calc(100vh - 85px);
     }
+
+	.title {
+		color: #161715;
+
+		@media (min-width: $sViewport) {
+			display: block;
+			top: 2em;
+		}
+
+		@media (min-width: $xlViewport) {
+			position: absolute;
+			transform-origin: 0 0;
+			transform: rotate(90deg);
+			font-size: 30px;
+			top: 2em;
+			left: 2em;
+		}
+	}
+
+	.smallLine {
+		display: none;
+	}
+
+	.description {
+		display: none;
+	}
 }
 
 .coverMin {
     display: block;	
+	position: relative;
 	width: 100%;
 	height: 8vh;
 	color: #333;
-	background-color: #161715;
-	overflow: hidden;
-	border-right: none;
-    border-bottom: 1px solid #999999;
-	transition: all 0.7s ease;
+	background: #161715;
 
     @media (min-width: $xlViewport) {
-       	position: relative;
 		display: block;
 		float: left;
 		width: 7%;
 		min-height: calc(100vh - 85px);
-		color: #333;
-		background-color: #161715;
-		overflow: hidden;
-		border-right: 1px solid #999999;
-        border-bottom: none;
-		transition: all 0.7s ease;
     }
+
+	.description {
+			display: none;
+	}
+
+	.smallLine {
+			display: none;
+	}
+
+	.title {
+		display: block;
+
+		@media (min-width: $xlViewport) {
+			transform-origin: 0 0;
+			transform: rotate(90deg);
+			position: absolute;
+			text-align: left;
+			top: 2em;
+			left: 2em;
+			font-size: 30px;
+			color: #FFF
+		}
+
+		@media (min-width: $sViewport) {
+			color: #FFF;
+		}
+	}
 }
 
+	/* STYLE DLA PROJEKTÓW I TREŚCI */
 
+.contentHidden {
+	display: none;
+}
+
+.mainContainer {
+    margin-left: 6em;
+    margin-right: 6em;
+    margin-top: 4.5em;
+}
+
+.topContentContainer {
+    width: 100%;
+    margin-bottom: 3em;
+
+	@media (min-width: $sViewport) {
+		display: none;
+	}
+
+	@media (min-width: $xlViewport) {
+		 display: flex;
+		  justify-content: space-between;
+    	align-content: center;
+	}
+}
+
+.sectionTitle {
+    display: block;
+    font-size: 35px;
+    color: #161715;
+    text-align: left;
+}
+
+.contactBtn {
+	font-family: "futura-pt", Arial, sans-serif;
+    display: block;
+    border: none;
+    width: 250px;
+    height: 60px;
+    font-size: 18px;
+    font-weight: 800;
+    background: #FFF;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+    text-transform: uppercase;
+    color: #161715;
+    cursor: pointer;
+}
+
+.sectionUnderline {
+    width: 12em;
+    height: 2px;
+    background: #161715;
+    margin-top: 0.8em;
+}
+
+.projectContainer {
+    text-align: center;
+}
+
+.projectTitle {
+    color: #161715;
+	margin-bottom: 0.6em;
+
+	@media (min-width: $sViewport) {
+		font-size: 45px;
+		text-align: center;
+      		
+	}
+
+	@media (min-width: $xlViewport) {
+		font-size: 60px;
+    	text-align: left;
+	}
+}
+
+.bottomContentContainer {
+
+	@media (min-width: $xlViewport) {
+		width: 100%;
+		display: flex;
+		margin-bottom: 3em;
+	}
+}
+
+.viewBtn {
+	font-family: "futura-pt", Arial, sans-serif;
+    display: block;  
+    width: 150px;
+    height: 40px;
+    border: 1px solid #161715;
+    color: #161715;
+    background: none;
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 1em;
+	text-align: center;
+}
+
+.projectDescription {
+    display: block;    
+    text-align: left;
+    width: 80%;
+    font-size: 18px;
+    line-height: 24px;
+    color: #161715;
+    font-family: "nimbus-sans";
+
+	@media (min-width: $sViewport) {	
+		display: none;
+	}
+
+	@media (min-width: $xlViewport) {	
+		display: block;
+	}
+}
+
+.projectInfo {
+    display: block;
+    width: 100%;     
+    font-size: 18px;
+    line-height: 24px;
+    text-align: left;
+        
+    td {
+        font-family: "nimbus-sans";
+         color: #161715;
+    }
+}
