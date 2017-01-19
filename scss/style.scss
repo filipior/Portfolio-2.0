@@ -355,7 +355,7 @@ $xlViewport: 1200px;
 	}
 }
 
-/* STYLE DLA PROJEKTÓW I TREŚCI */
+/* STYLE DLA PROJEKTÓW */
 
 .hidden {
 	display: none;
@@ -485,7 +485,7 @@ $xlViewport: 1200px;
 .projectDescription {
     display: block;    
     text-align: left;
-    width: 80%;
+    width: 90%;
     font-size: 18px;
     line-height: 24px;
     color: #161715;
@@ -559,7 +559,41 @@ $xlViewport: 1200px;
 	}
 }
 
+
+/* STYLE DLA STRON STATYCZNYCH */
+
+.twoColumns {
+	display: flex;
+	justify-content: space-between;
+	// border: 1px solid red;
+}
+
+.twoColumnsLeft {
+	width: 55%;
+	
+}
+
+.twoColumnsRight {
+	width: 35%;
+
+}
+
+.underlineLarge {
+	height: 2px;
+	width: 100%;
+	background: #161715;
+}
+
+.underlineSmall {
+	height: 2px;
+	width: 100%;
+	background: #161715;
+}
+
+
 .text {
+	margin-top: 1.5em;
+	margin-bottom: 3em;
 	font-family: "nimbus-sans";
 	font-size: 18px;
 	line-height: 24px;
@@ -568,9 +602,41 @@ $xlViewport: 1200px;
 }
 
 .lead {
-	margin-bottom: 1em;
+	margin-bottom: 0.6em;
 	display: block;
     font-size: 35px;
     color: #161715;
     text-align: left;
+}
+
+.list {
+	list-style-type: none;
+	font-family: "futura-pt";
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 800;
+	text-transform: uppercase;
+	color: #161715;
+	margin-bottom: 3em;
+
+	li {
+		margin-top: 1em;
+		text-align: left;
+	}
+}
+
+.iconsLarge {
+	color: #161715;
+	font-size: 35px;
+	text-align: left;
+	margin-top: 0.8em;
+
+	i {
+		margin-right: 25px;
+	}
+}
+
+.end {
+	align-self: flex-end;
+	// margin-top: auto;
 }
