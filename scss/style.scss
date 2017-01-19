@@ -325,9 +325,9 @@ $xlViewport: 1200px;
 		display: block;
 
 		@media (min-width: $xlViewport) {
-			transform-origin: 0 0;
-			transform: rotate(90deg);
 			position: absolute;
+			transform-origin: 0 0;
+			transform: rotate(90deg);		
 			text-align: left;
 			top: 2em;
 			left: 2em;
