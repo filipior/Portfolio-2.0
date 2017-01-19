@@ -1,0 +1,247 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #555555;
+	font-family: "futura-pt", Arial, sans-serif;
+}
+
+$sViewport: 320px;
+$mViewport: 600px;
+$lViewport: 900px;
+$xlViewport: 1200px;
+
+.top {
+    height: 85px;
+    width: 100%;
+    background-color: #FFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // padding: 10px;
+    transition: height 0.5s;
+
+    @media (min-width: $sViewport) {
+        height: 85px;
+    }
+
+    @media (min-width: $lViewport) {
+        height: 120px;
+    }
+
+    @media (min-width: $xlViewport) {
+        height: 170px;
+    }
+}
+
+.logo {
+    border: 1px solid #999999;
+    background-image: url(../img/logo.svg);
+    background-size: 80%;	
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: width 0.5s, height 0.5s, margin-left 0.5s; 
+
+
+    @media (min-width: $sViewport) {
+        width: 60px;
+		height: 60px;
+        margin-left: 10px;
+    }
+
+    @media (min-width: $lViewport) {
+        width: 75px;
+		height: 75px;
+        margin-left: 15px;
+    }
+
+    @media (min-width: $xlViewport) {
+        width: 95px;
+        height: 95px;
+        margin-left: 35px;
+    }
+}
+
+.socialIcons {
+		display: none;
+   
+    @media (min-width: $xlViewport) {
+        display: inline;
+        margin-right: 35px;
+		font-size: 20px;
+
+        .fa {
+			margin-left: 15px;
+		}		
+	}
+} 
+
+.hamburgerMenu {
+	width: 90px;
+	height: 35px;
+	border: 1px solid #999999;
+	line-height: 35px;
+	text-align: center;	
+	font-weight: bold;
+	cursor: pointer;
+
+    @media (min-width: $sViewport) {
+        margin-right: 10px;
+    }
+
+    @media (min-width: $xlViewport) {
+        display: none;
+    }
+
+    @media (min-width: $mViewport) {
+        margin-right: 15px;
+    }
+}   
+
+.hamburgerMenuOpen {
+	width: 100%;
+	height: 500px;
+	background: #FFFFFF;
+	border-top: 1px solid #999999;
+	display: none;
+}
+
+.menuItem {
+	margin-top: 30px;
+	text-align: center;
+	font-size: 23px;
+	font-weight: bold;
+	line-height: 40px;
+	text-transform: uppercase;
+	margin-left: 10px;
+	color: #161715;
+	cursor: pointer;
+}
+
+.smallLineMenu {
+	width: 300px;
+	height: 1px;
+	background-color: #999999;
+	margin: 0 auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+// POCZĄTEK SEKCJI Z CONTENTEM ----------------------------------//
+
+@keyframes onHoverIn { 
+    0%{background-position:0%}
+   	100%{background-position:100%}
+}
+
+@keyframes onHoverOut { 
+    0%{background-position:100%}
+   	100%{background-position:0%}
+}
+
+.coverContainer {
+
+    @media (min-width: $xlViewport) {
+        width: 100%;
+        height: calc(100vh - 170px);
+        display: flex;
+        flex-wrap: nowrap;
+    }
+}
+
+.cover {
+	width: 100%;
+	height: 35vh;
+	background: linear-gradient(135deg, #161715 0%,#161715 35%,#9cb4c4 60%,#eef1aa 100%,#eef1aa 100%);
+	background-size: 300% 300%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	color: white;
+	text-align: center;
+	margin-bottom: 1px;
+	transition: height 0.5s ease-in-out;
+	cursor: pointer;
+
+    @media (min-width: $xlViewport) {
+        width: calc(25% - 1px);
+		height: calc(100vh - 170px);
+		margin-left: 1px;
+		padding: 50px;
+		transition: width 0.5s ease-in-out;
+
+        .description {
+            display: inline-block;
+            width: 300px;
+	    }	
+    }
+}
+
+.cover:hover {
+	animation-name: onHoverIn;
+	background-position: 100%;
+
+     @media (min-width: $sViewport) {
+        height:  calc(50vh - 60px);
+    }
+
+     @media (min-width: $xlViewport) {
+        width: 30%;
+		height: calc(100vh - 170px);
+		animation-name: onHoverIn;
+		background-position: 100%;
+
+		.description {
+			color: #161715;
+			display: inline-block;
+			width: 300px;
+			transition: color 0.5s ease-in-out;
+		}
+    }
+
+	.title {
+		color: #161715;
+		transition: color 0.5s ease-in-out;
+	}
+
+	.description {
+		color: #161715;
+		transition: color 0.5s ease-in-out;
+	}
+
+	.smallLine {
+		background-color: #161715;
+		transition: color 0.5s ease-in-out;
+	}  
+}
+
+.title {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.smallLine {
+	width: 60px;
+	height: 1px;
+	background-color: #5d4157;
+	margin: 0 auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.description {
+	font-size: 18px;
+	color: #babbba;
+}
+
+.coverOnHover {
+	animation-name: onHoverOut;
+	animation-duration: 0.3s;
+}   
