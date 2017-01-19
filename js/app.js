@@ -22,7 +22,7 @@ $(function () {
 	// covery ----------------------------------------
 
 	var cover = $(".cover");
-	var content = $(".contentHidden");
+	var content = $(".projectContent");
 	var coverTitle = $(".content");
 
 	var logo = $(".logo");
@@ -35,8 +35,10 @@ $(function () {
 
 		cover.addClass("coverMin");
 		cover.removeClass("coverMax");
+		content.css('display', 'none');
+		$(this).find('.projectContent').css('display', 'block');
 		$(this).removeClass("coverMin").addClass("coverMax");
-		content.css("display", "block");
+		content.removeClass("hidden").addClass("show")
 		
 		
 		allClosed = false;
@@ -46,16 +48,15 @@ $(function () {
 			logo.addClass("logoCollapsed");
 			top.addClass("topCollapsed");
 		} 
-
-
 	});
 
 	logo.on("click", function (event) {
 
 		cover.removeClass("coverMax");
 		cover.removeClass("coverMin");
-		content.css("display", "none");
-		// coverTitle.css("display", "block");
+		content.removeClass("show").addClass("hidden");
+		content.css('display', 'none');
+		
 
 		allClosed = true;
 		if (allClosed === true) {
@@ -63,7 +64,6 @@ $(function () {
 			logo.removeClass("logoCollapsed");
 			top.removeClass("topCollapsed");
 		}
-
 	});
 
 
