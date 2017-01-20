@@ -355,7 +355,9 @@ $xlViewport: 1200px;
 	}
 }
 
+
 /* STYLE DLA PROJEKTÓW ------------------------------------------------------------------------------ */
+
 
 .hidden {
 	display: none;
@@ -575,6 +577,7 @@ $xlViewport: 1200px;
 
 /* STYLE DLA STRON STATYCZNYCH -------------------------------------------------------------*/
 
+
 .twoColumns {
 	display: flex;
 	justify-content: space-between;
@@ -582,12 +585,10 @@ $xlViewport: 1200px;
 
 .twoColumnsLeft {
 	width: 55%;
-	
 }
 
 .twoColumnsRight {
 	width: 35%;
-
 }
 
 .underlineLarge {
@@ -650,13 +651,15 @@ $xlViewport: 1200px;
 
 .end {
 	align-self: flex-end;
-	// margin-top: auto;
 }
+
 
 /* STYLE DLA ZDJĘĆ -------------------------------------------------------------------------*/
 
+
 .photoTwoColums {
 	display: flex;
+	margin-bottom: 6em;
 
 	img {
 		width: 100%;
@@ -672,7 +675,10 @@ $xlViewport: 1200px;
 	width: 40%
 }
 
+
+
 /* FORMULARZ---------------------------------------------------------------------------------- */
+
 
 .contactForm {
 	display: block;
@@ -737,4 +743,7 @@ $xlViewport: 1200px;
 	}
 }
 
-
+input[type=text], select {
+	font-family: "nimbus-sans";
+	font-size: 18px;
+}
