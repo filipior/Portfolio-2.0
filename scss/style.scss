@@ -139,7 +139,7 @@ $xlViewport: 1200px;
 }
 
 
-// POCZĄTEK SEKCJI Z CONTENTEM ----------------------------------//
+// POCZĄTEK SEKCJI Z CONTENTEM -------------------------------------------------------------------//
 
 
 @keyframes onHoverIn { 
@@ -355,7 +355,7 @@ $xlViewport: 1200px;
 	}
 }
 
-/* STYLE DLA PROJEKTÓW */
+/* STYLE DLA PROJEKTÓW ------------------------------------------------------------------------------ */
 
 .hidden {
 	display: none;
@@ -547,7 +547,7 @@ $xlViewport: 1200px;
 	}
 
 	@media (min-width: $xlViewport) {
-		height: 70vh;
+		height: 80vh;
         overflow-y: scroll;
         cursor: s-resize;
         margin-bottom: 6em;
@@ -558,13 +558,23 @@ $xlViewport: 1200px;
 	}
 }
 
+.projectViewer::-webkit-scrollbar {
+	display: none;
+}
 
-/* STYLE DLA STRON STATYCZNYCH */
+.projectUnderline {
+	width: 100%;
+	height: 2px;
+	background-color: #161715;
+	margin-bottom: 3em;
+}
+
+
+/* STYLE DLA STRON STATYCZNYCH -------------------------------------------------------------*/
 
 .twoColumns {
 	display: flex;
 	justify-content: space-between;
-	// border: 1px solid red;
 }
 
 .twoColumnsLeft {
@@ -640,7 +650,7 @@ $xlViewport: 1200px;
 	// margin-top: auto;
 }
 
-/* STYLE DLA ZDJĘĆ */
+/* STYLE DLA ZDJĘĆ -------------------------------------------------------------------------*/
 
 .photoTwoColums {
 	display: flex;
@@ -659,7 +669,7 @@ $xlViewport: 1200px;
 	width: 40%
 }
 
-/* FORMULARZ */
+/* FORMULARZ---------------------------------------------------------------------------------- */
 
 .contactForm {
 	display: block;
@@ -718,6 +728,7 @@ $xlViewport: 1200px;
 		color: #161715;
 		cursor: pointer;
 		margin-top: 1.5em;
+		letter-spacing: 0.05em;
 	}
 }
 
